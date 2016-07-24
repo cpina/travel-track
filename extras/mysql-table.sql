@@ -1,5 +1,7 @@
 -- Quick and dirty datamodel for the hackday
-CREATE DATABASE TRAVEL_TRACKER;
+CREATE DATABASE travel_tracker;
+
+USE travel_tracker;
 
 CREATE TABLE instagram_photos(
 	id int not null AUTO_INCREMENT,

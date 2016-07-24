@@ -44,14 +44,18 @@ def download_photo(url, created_time):
     file_name = "IMG_{}{}{}_{}{}{}.jpg".format(year,month,day,hour,minute,second)
 
     config = read_config()
-    images_directory = config.get("Directories", "output") + "/images/"
+    relative_images_directory = "images/"
+    absolute_images_directory = config.get("Directories", "output") + "/" + relative_images_directory
 
-    if not os.path.exists(images_directory):
-        os.makedirs(images_directory)
+    if not os.path.exists(absolute_images_directory):
+        os.makedirs(absolute_images_directory)
 
-    file_path = images_directory + file_name
-    downloader = urllib.request.urlretrieve(url, file_path)
-    return file_path
+    absolute_file_path = absolute_images_directory + file_name
+    relative_file_path = relative_images_directory + file_name
+
+    downloader = urllib.request.urlretrieve(url, absolute_file_path)
+
+    return relative_file_path
 
 def insert_data(instagram_id, link, file_path, text, latitude, longitude, created_time):
     db = connect_database()
