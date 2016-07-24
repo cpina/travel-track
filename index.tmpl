@@ -4,11 +4,13 @@
 </head>
 
 <body>
+{{{introduction_message}}}
 <img src="{{last_photo_path}}"/><br>
-<br>
+<p>
 {{last_text}} - {{picture_date}}<br>
 
 <iframe src="http://maps.google.com/maps?q={{last_latitude}},{{last_longitude}}&z=5&output=embed&key={{google_maps_key}}" height="500" width="640"></iframe>
-
+<p>
+{{{end_message}}}
 </body>
 </html>

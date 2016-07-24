@@ -44,7 +44,11 @@ def generate_informations():
     informations = {}
     populate_last_image(informations)
 
-    informations['google_maps_key'] = read_config().get("General", "GoogleMapKey")
+    config = read_config()
+
+    informations['google_maps_key'] = config.get("General", "GoogleMapKey")
+    informations['introduction_message'] = config.get("Texts", "IntroductionMessage")
+    informations['end_message'] = config.get("Texts", "EndMessage")
 
     return informations
 
