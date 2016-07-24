@@ -59,5 +59,4 @@ def generate_output(info):
 
 if __name__ == "__main__":
     informations = generate_informations()
-    print(informations)
     generate_output(informations)

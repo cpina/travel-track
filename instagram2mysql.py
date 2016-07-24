@@ -50,7 +50,6 @@ def download_photo(url, created_time):
         os.makedirs(images_directory)
 
     file_path = images_directory + file_name
-    print("download_photo:",url,file_path)
     downloader = urllib.request.urlretrieve(url, file_path)
     return file_path
 
@@ -93,14 +92,6 @@ def import_photos():
 
         instagram_id = photo['id']
         created_time = photo['created_time']
-
-        print("latitude:",latitude)
-        print("longitude:",longitude)
-        print("created_time:",created_time)
-        print("link:",link)
-        print("image_url:",image_url)
-        print("text:",text)
-        print("instagram_id:",instagram_id)
 
         inserted = instagram_id_exists(instagram_id)
 
